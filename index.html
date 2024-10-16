@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login form</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper">
+        <form 
+        method="POST"
+        action="login.php" 
+        onsubmit="return Validate()"> <!-- Ensure validate function returns a boolean -->
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" id="email" name="email" placeholder="Email" required> 
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="password" name="password" placeholder="Password" required> 
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <div class="remember-forget">
+                <label>
+                    <input type="checkbox">Remember me 
+                </label>
+                <a href="#">Forgot password?</a>
+            </div>
+            <button 
+            type="submit" 
+            name="submit"
+            class="btn"
+            >Login</button>
+            <div class="register-link">
+                <p>Don't have an account? <a href="Create_acc.html">Create account</a></p>
+            </div>
+        </form>
+    </div>
+
+    <!-- JavaScript Validation -->
+    <script>
+     function Validate() {
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+        // Check if email is empty
+        if (email === "") {
+            alert("Please enter your email.");
+            document.getElementById("email").focus();
+            return false;
+        }
+
+        // Check if email is valid (basic format check)
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            alert("Please enter a valid email address.");
+            document.getElementById("email").focus();
+            return false;
+        }
+
+        // Check if password is empty
+        if (password === "") {
+            alert("Please enter your password.");
+            document.getElementById("password").focus();
+            return false;
+        }
+
+        // Check if password is at least 6 characters
+        if (password.length < 6) {
+            alert("Password must be at least 6 characters long.");
+            document.getElementById("password").focus();
+            return false;
+        }
+
+        return true; // Form is valid
+     }
+    </script>
+</body>
+</html>

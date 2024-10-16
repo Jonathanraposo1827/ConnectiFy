@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Create Account</title>
+		<link rel="stylesheet" href="mystyle.css" />
+		<link
+			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div class="wrapper">
+			<form
+				method="POST"
+				action="create_account.php"
+				onsubmit="{validateCreateAccount()}"
+			>
+				<h1>Create Account</h1>
+				<!-- <div class="input-box">
+					<input
+						type="text"
+						id="firstname"
+						name="firstname"
+						placeholder="Firstname"
+						required
+					/>
+					<div class="input-box">
+						<input
+							type="text"
+							id="lastname"
+							name="lastname"
+							placeholder="Lastname"
+							required
+						/> -->
+						<div class="name-wrapper">
+							<div class="input-box">
+								<input
+									type="text"
+									id="firstname"
+									name="firstname"
+									placeholder="Firstname"
+									required
+								/>
+							</div>
+							<div class="input-box">
+								<input
+									type="text"
+									id="lastname"
+									name="lastname"
+									placeholder="Lastname"
+									required
+								/>
+							</div>
+						</div>
+						
+				<div class="input-box">
+					<input
+						type="email"
+						id="email"
+						name="email"
+						placeholder="Email"
+						required
+					/>
+					<i class="bx bxs-envelope"></i>
+				</div>
+				<div class="input-box">
+					<input
+						type="password"
+						id="password"
+						name="password"
+						placeholder="Password"
+						required
+					/>
+					<i class="bx bxs-lock-alt"></i>
+				</div>
+				<div class="input-box">
+					<input
+						type="password"
+						id="ConfirmPassword"
+						name="ConfirmPassword"
+						placeholder="Confirm Password"
+						required
+					/>
+					<i class="bx bxs-lock-alt"></i>
+				</div>
+				<button type="submit" name="submit" class="btn">Create Account</button>
+				<div class="register-link">
+					<p>Already have an account? <a href="index.html">Login here</a></p>
+				</div>
+			</form>
+		</div>
+
+		<script>
+			function validateCreateAccount() {
+				var email = document.getElementById("email").value;
+				var password = document.getElementById("password").value;
+				var confirmPassword = document.getElementById("ConfirmPassword").value;
+
+				var validPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+				if (!validPattern.test(email)) {
+					alert("Please enter a valid email");
+					return false;
+				}
+
+				if (password.length < 6) {
+					alert("Password must be at least 6 characters long.");
+					return false;
+				}
+
+				if (password !== confirmPassword) {
+					alert("Passwords do not match.");
+					return false;
+				}
+
+				return true;
+			}
+		</script>
+	</body>
+</html>

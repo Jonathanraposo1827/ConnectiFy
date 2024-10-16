@@ -30,5 +30,5 @@
     } else
      {
         echo "Form not submitted correctly."; // Error if form not submitted properly
-    }
+    }// comment line for github
 ?>

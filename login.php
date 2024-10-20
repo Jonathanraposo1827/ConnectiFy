@@ -2,9 +2,12 @@
     require_once("connection.php"); // Includes the connection file for database access
 
     if (isset($_POST['submit'])) { // Checks if the form is submitted
-        if (empty($_POST['email']) || empty($_POST['password'])) { 
+        if (empty($_POST['email']) || empty($_POST['password']))
+         { 
             echo 'Please fill in the blanks.'; // Prompt to fill in email and password
-        } else {
+         }
+          else 
+          {
             $UserEmail = $_POST['email'];
             $UserPassword = $_POST['password'];
 
@@ -14,16 +17,25 @@
                 $query = "SELECT * FROM user_login WHERE email='$UserEmail' AND password='$UserPassword'";
                 $result = mysqli_query($con, $query);
 
-                if (mysqli_num_rows($result) > 0) {
+                if (mysqli_num_rows($result) > 0) 
+                {
+                    // Fetch the result row to get user details this was donefor post.php
+                    $row = mysqli_fetch_assoc($result);
                     // If login is successful, start session and store the email
                     session_start();
                     $_SESSION['email'] = $UserEmail;
-                    header("Location:userlist.php"); // Redirect to dashboard
+                    $_SESSION['user_id'] = $row['id']; // Make sure this is done after successful login
+
+                    header("Location:posts.html"); // Redirect to dashboard
                     exit;
-                } else {
+                }
+                 else 
+                {
                     echo "Invalid email or password."; // Error if credentials don't match
                 }
-            } else {
+            }
+             else 
+            {
                 echo "Database connection error."; // Error if database connection fails
             }
         }

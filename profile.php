@@ -165,7 +165,7 @@ mysqli_close($con);
 
                 <div class="input-box">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>" readonly> <!-- Email is readonly -->
+                    <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>"> <!-- Email is readonly -->
                 </div>
 
                 <div class="input-box">

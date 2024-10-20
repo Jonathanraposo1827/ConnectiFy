@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+</head>
+<body>
+    <h1>Create a Post</h1>
+    <form
+     action="post.php"
+     method="POST"
+     enctype="multipart/form-data">
+    <label for="bio">Your bio<label>
+    <textarea id ="bio" name="bio" rows="4" cols="50" ></textarea>
+    <br>
+    <label for="picture">Upload a pic:</label>
+    <input type="file" name="picture" id="picture" accept="image/*"><br>
+
+    <input type="submit" value="Post">
+    </form>
+    <br>
+    <a href="user_posts.php">View Your Posts</a>
+    <br>
+    <a href="choose_frnd_to_Sent _req.php">sent req</a>
+    <br>
+    <a href="friend_requests.php">accept req</a>
+    <br>
+    <a href="view_friends_posts.php">see friends post </a>
+    <br>
+    <a href="view_frnds.php">see friends </a>
+    <br>
+    <a href="profile.php">profile</a>
+    <br>
+    <a href="userposts.php">delete post</a>
+    <br>
+    <!-- <a href="send_friend_request.php">send a friend request</a>
+    <br>
+    <a href="view_friends_posts.php">View frnds</a>
+    <br>
+    <a href="friend_requests.php">friend requests</a>
+    <br>
+    <a href="handle_friend_requests.php">handle frnd req</a>
+    <br>
+    <a href="userlist.php">View usrs in databse</a>
+
+    <form method="POST" action="send_friend_request.php">
+        <input type="hidden" name="friend_id" value="<?php echo $friend_id; ?>">
+        <button type="submit">Send Friend Request</button>
+    </form>
+     -->
+
+</body>
+</html>

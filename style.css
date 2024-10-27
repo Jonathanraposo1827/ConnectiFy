@@ -1,119 +1,146 @@
+/* General styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    margin: 0;               /* Removes default margin */
+    padding: 0;              /* Removes default padding */
+    box-sizing: border-box;  /* Ensures padding and border are included in element's total width and height */
+    font-family: "Poppins", sans-serif; /* Sets a consistent font family for all elements */
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background:url('anime.jpg') no-repeat;
-    background-size: cover;
-    background-position: center;
+    display: flex;                        /* Makes body a flex container */
+    justify-content: center;              /* Centers content horizontally */
+    align-items: center;                  /* Centers content vertically */
+    min-height: 100vh;                    /* Sets minimum height to full viewport height */
+    /* background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); Gradient background */
+        /* background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); */
+background: linear-gradient(135deg, #1a1f36, #2b3a67, #3e4f88, #485792);
+
+    background-size: cover;               /* Ensures background covers the entire area */
+    color: #fff;                          /* Sets default text color to white */
 }
 
+/* Wrapper styles */
 .wrapper {
-    width: 420px;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 10px rgba(0,0,0,.2);
-    color: #fff; 
-    border-radius: 10px;
-    padding: 30px 40px;
-    
+    width: 420px;                         /* Fixed width for the wrapper */
+    background: rgba(0, 0, 0, 0.6);       /* Adds a semi-transparent black background for a glass effect */
+    border: 2px solid rgba(255, 255, 255, 0.1); /* Subtle border with transparency */
+    border-radius: 15px;                  /* Rounds the wrapper's corners */
+    padding: 40px;                        /* Adds space inside the wrapper */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Shadow effect around the wrapper */
+    backdrop-filter: blur(10px);          /* Adds a blur effect for a frosted glass look */
 }
 
 .wrapper h1 {
-    font-size: 36px;
-    text-align: center;
+    font-size: 2em;                       /* Larger font for the title */
+    text-align: center;                   /* Centers the title */
+    color: #e0e0e0;                       /* Light gray color for the title */
 }
 
- .input-box {
-    position: relative;
-    width: 100%;
-    height: 50px;
-    margin: 30px 0;
+/* Input box styles */
+.input-box {
+    position: relative;                   /* Positions elements inside relative to the box */
+    width: 100%;                          /* Full width of the container */
+    margin: 20px 0;                       /* Vertical spacing around the box */
 }
 
-/* .input-box input {
-    width: 100%;
-    height: 100%;
-    background:purple;
-    border: none;
-    outline: none;
-    border: 2px solid rgba(255, 255, 255, .2);
-    border-radius: 40px;
-    padding: 10px;
-} */
 .input-box input {
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    color:#fff;
-    outline: none;
-    border-width: 2px;
-    border-style: solid;
-    border-color: rgba(255, 255, 255, 0.2);
-    border-image: initial;
-    border-radius: 40px;
-    padding: 20px 45px 20px 20px;
+    width: 100%;                          /* Full width of the input */
+    padding: 12px 20px;                   /* Padding inside the input */
+    background: transparent;              /* Transparent background */
+    color: #fff;                          /* White text color */
+    outline: none;                        /* Removes default focus outline */
+    border: 2px solid transparent;        /* Transparent border initially */
+    border-bottom: 2px solid #4b6cb7;     /* Adds a blue bottom border */
+    font-size: 16px;                      /* Sets input font size */
+    transition: all 0.3s ease;            /* Smooth transition for hover effects */
+    border-radius: 5px;                   /* Rounds the input's corners slightly */
 }
-.input-box input::placeholder{
-    color: #fff;
-}
-.input-box i{
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-    color: #fff;
-}
-.remember-forget{
-    display: flex;
-    justify-content: space-between;
-    font-size: 15px;
-    margin: -15px 0 15px;
-}
-.remember-forget label input{
-    accent-color: #fff;
-    margin-right: 3px;
-}
-.remember-forget a{
-    color: #fff;
-    text-decoration: none;
-}
-.remember-forget a:hover{
-    text-decoration:underline ;
 
+.input-box input:focus {
+    border-color: #4b6cb7;                /* Blue border when focused */
+    box-shadow: 0 0 8px rgba(75, 108, 183, 0.8); /* Blue shadow on focus */
 }
-.btn{
-    width: 100%;
-    height:45px ;
-    background: #fff; ;
-    border:none ;
-    outline:none ;
-    border-radius: 40px;
-    box-shadow:0 0 10px rgba(0,0,0,.1) ; 
-    cursor: pointer;
-    font-size: 16px;
-    color: #333;
-    font-weight: 600;
+
+.input-box input::placeholder {
+    color: #aaa;                          /* Light gray color for placeholder text */
 }
-.register-link{
-    font-size: 15px;
-    text-align: center;
-    margin: 20px 0 15px;
+
+.input-box i {
+    position: absolute;                   /* Positions icon relative to input box */
+    right: 15px;                          /* Positions icon to the right inside the box */
+    top: 50%;                             /* Vertically centers icon */
+    transform: translateY(-50%);          /* Offsets icon vertically by 50% for perfect centering */
+    font-size: 18px;                      /* Font size of the icon */
+    color: #fff;                          /* White icon color */
 }
-.register-link p a{
-    color: #fff;
-    text-decoration:none ;
-    font-weight:600 ;
+
+/* Checkbox and link styling */
+.remember-forget {
+    display: flex;                        /* Flexbox to align items horizontally */
+    justify-content: space-between;       /* Spaces items apart */
+    align-items: center;                  /* Centers items vertically */
+    margin-top: 15px;                     /* Adds spacing above the section */
+    font-size: 14px;                      /* Sets font size */
+    color: #e0e0e0;                       /* Light gray text color */
 }
-.register-link p a:hover{
-    text-decoration: underline;
+
+.remember-forget label {
+    display: flex;                        /* Flexbox for label and checkbox alignment */
+    align-items: center;                  /* Centers label and checkbox */
+    cursor: pointer;                      /* Changes cursor to pointer on hover */
+}
+
+.remember-forget input[type="checkbox"] {
+    margin-right: 8px;                    /* Adds space between checkbox and label text */
+    accent-color: #4b6cb7;                /* Sets checkbox accent color */
+}
+
+.remember-forget a {
+    color: #4b6cb7;                       /* Blue color for links */
+    text-decoration: none;                /* Removes underline from links */
+    transition: color 0.3s ease;          /* Smooth color transition on hover */
+}
+
+.remember-forget a:hover {
+    color: #e0e0e0;                       /* Changes link color on hover */
+    text-decoration: underline;           /* Adds underline on hover */
+}
+
+/* Button styles */
+.btn {
+    width: 100%;                          /* Full width of the button */
+    padding: 12px;                        /* Padding inside the button */
+    background: linear-gradient(90deg, #4b6cb7, #182848); /* Gradient background */
+    border: none;                         /* Removes default border */
+    color: #fff;                          /* White text color */
+    font-size: 16px;                      /* Font size for button text */
+    font-weight: bold;                    /* Bold button text */
+    cursor: pointer;                      /* Pointer cursor on hover */
+    border-radius: 8px;                   /* Rounds the button's corners */
+    transition: background 0.3s ease, transform 0.2s ease; /* Smooth transition on hover */
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #182848, #4b6cb7); /* Reverses gradient on hover */
+    transform: scale(1.05);               /* Slightly enlarges button on hover */
+}
+
+.btn:active {
+    transform: scale(0.98);               /* Slightly shrinks button on click */
+}
+
+/* Register link styles */
+.register-link {
+    font-size: 14px;                      /* Sets font size for register text */
+    text-align: center;                   /* Centers the text */
+    margin-top: 15px;                     /* Adds spacing above the link */
+}
+
+.register-link p a {
+    color: #4b6cb7;                       /* Blue color for register link */
+    text-decoration: none;                /* Removes underline from link */
+}
+
+.register-link p a:hover {
+    text-decoration: underline;           /* Underlines link on hover */
 }

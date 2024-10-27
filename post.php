@@ -30,9 +30,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         $sql = "INSERT INTO post(user_id, bio, picture) VALUES ('$userId', '$bio', '$target_file')";
         if (mysqli_query($con, $sql))
         {
-           echo "Post created successfully!";
-           echo "<h2>Your Posted Picture:</h2>";
-            echo "<img src='$target_file' alt='Uploaded Picture' style='max-width: 300px; max-height: 300px;'>";
+        //    echo "Post created successfully!";
+        //    echo "<h2>Your Posted Picture:</h2>";
+        //     echo "<img src='$target_file' alt='Uploaded Picture' style='max-width: 300px; max-height: 300px;'>";
+         header("location:user_posts.php");
             
         } 
         else 
@@ -48,7 +49,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
 
 }
-
 mysqli_close($con); // Close the database connection
-
 ?>

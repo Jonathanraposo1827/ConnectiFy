@@ -18,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     if (mysqli_query($con, $sql))
      {
         echo "Request updated successfully!";
+        header("Location:friend_requests.php");
     } 
     else
      {

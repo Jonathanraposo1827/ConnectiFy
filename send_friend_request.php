@@ -23,7 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if (mysqli_query($con, $sql))
          {
-            echo "Friend request sent!";
+            // echo "Friend request sent!";
+            header("Location:choose_frnd_to_Sent _req.php");
         } 
         else
         {

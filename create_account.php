@@ -14,7 +14,8 @@
             $UserPassword = $_POST['password'];
 
             // Ensure the connection is still open
-            if ($con) {
+            if ($con) 
+            {
                 $query = "INSERT INTO user_login (email, password,firstname,lastname) VALUES('$UserEmail', '$UserPassword',' $firstname','$lastname ')";
                 $result = mysqli_query($con, $query);
 

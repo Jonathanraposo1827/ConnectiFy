@@ -51,7 +51,7 @@ mysqli_close($con);
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: url('anime.jpg') no-repeat;
+             background: url('anime.jpg') no-repeat;
             background-size: cover;
             background-position: center;
         }
@@ -100,6 +100,7 @@ mysqli_close($con);
             border-color: rgba(255, 255, 255, 0.2);
             border-radius: 40px;
             padding: 20px 45px 20px 20px;
+
         }
 
         .input-box input::placeholder {
@@ -154,23 +155,23 @@ mysqli_close($con);
                 <div class="name-wrapper">
                     <div class="input-box">
                         <label for="firstname">First Name:</label>
-                        <input type="text" id="firstname" name="firstname" value="<?php echo htmlspecialchars($user['firstname']); ?>" required>
+                        <input type="text" id="firstname" name="firstname" value="<?php echo htmlspecialchars($user['firstname']); ?>" required style="font-size: 16px;"   >
                     </div>
 
                     <div class="input-box">
                         <label for="lastname">Last Name:</label>
-                        <input type="text" id="lastname" name="lastname" value="<?php echo htmlspecialchars($user['lastname']); ?>" required>
+                        <input type="text" id="lastname" name="lastname" value="<?php echo htmlspecialchars($user['lastname']); ?>" required style="font-size: 16px;">
                     </div>
                 </div>
 
                 <div class="input-box">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>"> <!-- Email is readonly -->
+                    <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>"style="font-size: 16px;"> <!-- Email is readonly -->
                 </div>
 
                 <div class="input-box">
                     <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" value="<?php echo htmlspecialchars($user['password']); ?>" required>
+                    <input type="password" id="password" name="password" value="<?php echo htmlspecialchars($user['password']); ?>" style="font-size: 16px;" required>
                 </div>
 
                 <div class="button-group">

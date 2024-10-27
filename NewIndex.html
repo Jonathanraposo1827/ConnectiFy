@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connectify - Home</title>
+<!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+<div class="max-w-4xl mx-auto p-8">
+    <h1 class="text-4xl font-bold text-center mb-8">Connectify</h1>
+
+    <!-- Navigation Links -->
+    <div class="flex justify-around bg-gray-800 rounded-lg p-4 mb-8">
+        <!-- <a href="post.php" class="text-gray-200 hover:text-blue-500">Create a Post</a> -->
+        <a href="user_posts.php" class="text-gray-200 hover:text-blue-500">View Your Posts</a>
+        <a href="choose_frnd_to_Sent _req.php" class="text-gray-200 hover:text-blue-500">Sent Requests</a>
+        <a href="friend_requests.php" class="text-gray-200 hover:text-blue-500">Accept Requests</a>
+        <a href="view_frnds.php" class="text-gray-200 hover:text-blue-500">See Friends</a>
+        <a href="profile.php" class="text-gray-200 hover:text-blue-500">Profile</a>
+        <a href="userposts.php" class="text-gray-200 hover:text-blue-500">Delete Post</a>
+        <!-- logout button based on trs req-->
+         
+        <form action="logout.php" method="POST">
+            <button type="submit" class="bg-red-600 hover:bg-red-500 text-white rounded-md px-5">Log Out</button>
+        </form> 
+    </div>
+
+    
+
+    <!-- Post Creation Form -->
+    <div class="bg-gray-800 rounded-lg p-6 shadow-lg">
+        <form action="post.php" method="POST" enctype="multipart/form-data" class="space-y-4">
+            <label for="bio" class="block text-lg font-medium">Your Caption:</label>
+            <textarea name="bio" id="bio" rows="4" placeholder="Write something..." class="w-full bg-gray-700 text-gray-100 border border-gray-600 rounded-md p-3"></textarea>
+            
+            <label for="picture" class="block text-lg font-medium">Upload a picture:</label>
+            <input type="file" name="picture" id="picture" accept="image/*" class="w-full text-gray-100 bg-gray-700 p-2 rounded-md">
+
+            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white py-2 rounded-md">Post</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

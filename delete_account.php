@@ -22,7 +22,7 @@ if (mysqli_query($con, $delete_query))
     session_destroy();
     echo "Account deleted successfully!";
     // Redirect to a goodbye or home page
-    // header("Location:Create_acc.html");
+    header("Location:Create_acc.html");
     exit();
 } else {
     echo "Error deleting account: " . mysqli_error($con);
